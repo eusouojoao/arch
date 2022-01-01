@@ -37,7 +37,6 @@ sed -i "s/CHANGE_ME/root=$(echo "\\\"UUID=$(sudo blkid -s UUID -o value $(df -hT
 #  /* user */
 useradd -m joao
 echo joao:password | chpasswd
-usermod -aG joao
 echo "joao ALL=(ALL) ALL" >> /etc/sudoers.d/joao
 
 rm -rf \$0
