@@ -1,6 +1,6 @@
 #!/bin/bash 
 set -e -v
-pacstrap /mnt base linux linux-firmware linux-headers base-devel git vi amd-ucode
+pacstrap /mnt base linux linux-firmware linux-headers base-devel git vim amd-ucode
 genfstab -U /mnt > /mnt/etc/fstab
 
 cat <<EOF > /mnt/root/archbtw.sh
