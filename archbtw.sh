@@ -35,10 +35,10 @@ echo "options   root=CHANGE_ME rw loglevel=3 quiet sysrq_always_enabled=1" >> /b
 sed -i "s/CHANGE_ME/root=$(echo "\\\"UUID=$(sudo blkid -s UUID -o value $(df -hT | grep /$ | awk '{print $1}'))\\\"")/" /boot/loader/entries/arch.conf
 
 #  /* user */
-useradd -m USER
-echo USER:password | chpasswd
-usermod -aG libvirt USER
-echo "USER ALL=(ALL) ALL" >> /etc/sudoers.d/USER
+useradd -m joao
+echo joao:password | chpasswd
+usermod -aG joao
+echo "joao ALL=(ALL) ALL" >> /etc/sudoers.d/joao
 
 rm -rf \$0
 exit # farewell, my work here is done
