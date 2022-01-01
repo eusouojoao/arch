@@ -13,7 +13,7 @@ locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 echo "KEYMAP=uk" > /etc/vconsole.conf
 echo "options hid_apple fnmode=2" > /etc/modprobe.d/hid_apple.conf
-update-initramfs -u
+mkinitcpio -P
 echo "HOST" > /etc/hostname
 echo "127.0.0.1 localhost" > /etc/hosts
 echo "::1       localhost" >> /etc/hosts
@@ -44,6 +44,7 @@ rm -rf \$0
 exit # farewell, my work here is done
 EOF
 
+chmod +x /mnt/root/archbtw.sh
 arch-chroot /mnt /mnt/root/archbtw.sh
 umount -R /mnt
 rm -rf $0
